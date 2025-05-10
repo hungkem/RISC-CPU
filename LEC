@@ -1,0 +1,144 @@
+// Note: Enable Unified Schematic Viewer usage
+// Note: Enable buffer/inverter collapsing usage on schematics
+// Note: Enable bus collapsing usage on schematics
+// Note: Enable independent UI styles on each schematics
+// Note: Set schematic traverse max. level to 100
+// Note: Enable Schematic concise drawing support
+TCL_SETUP> vpx dofile ./lec.tcl
+// Command: vpx dofile ./lec.tcl
+// Command: set_log_file lec.log 			-replace
+0
+CPU time     : 0.70    seconds
+Elapse time  : 33      seconds
+Memory usage : 90.59   M bytes
+// Command: read_library slow.lib 	-lib 		-revised
+// Parsing file slow.lib ...
+// Warning: (RTL9.17) Cell doesn't have any output pins or all output pins are undriven (blackboxed) (occurrence:1)
+// Note: (RTL9.26) Liberty pin with internal_node use default input_map (occurrence:16)
+// Note: Read Liberty library successfully
+0
+CPU time     : 0.91    seconds
+Elapse time  : 34      seconds
+Memory usage : 107.34  M bytes
+// Command: read_design top.v top.v accumulator_register.v address_mux.v alu.v controller.v def.v driver_bus.v instruction_register.v memory.v program_counter.v 	-verilog	-golden
+// Parsing file top.v ...
+// Parsing file def.v ...
+// Parsing file top.v ...
+// Parsing file def.v ...
+// Parsing file accumulator_register.v ...
+// Parsing file def.v ...
+// Parsing file address_mux.v ...
+// Parsing file def.v ...
+// Parsing file alu.v ...
+// Parsing file def.v ...
+// Parsing file controller.v ...
+// Parsing file def.v ...
+// Parsing file def.v ...
+// Parsing file driver_bus.v ...
+// Parsing file def.v ...
+// Parsing file instruction_register.v ...
+// Parsing file def.v ...
+// Parsing file memory.v ...
+// Parsing file def.v ...
+// Parsing file program_counter.v ...
+// Parsing file def.v ...
+// Golden root module is set to 'top'
+// Warning: (RTL1.1) Variable/signal is assigned by more than one concurrent statement (occurrence:1)
+// Warning: (RTL1.5b) Potential loss of RHS msb or carry-out bit (occurrence:2)
+// Warning: (RTL1.8) Latch is assigned by blocking assignments (occurrence:90)
+// Note: (RTL5.5a) Default case item with non-X assignment(s) (occurrence:1)
+// Note: (RTL5.6) Case statement with no default (occurrence:1)
+// Note: (RTL5.7) Default case item with inconsistent assignment(s). (occurrence:1)
+// Note: (RTL8.2) Latch(es) are inferred due to self assignment (occurrence:10)
+// Warning: (RTL14) Signal has input but it has no output (occurrence:1)
+// Warning: (VLG5.3) Wire and port size declaration(s) do not match (occurrence:1)
+// Note: (VLG9.2) The `define macro is used (occurrence:20)
+// Warning: (DIR6.2) Supported compiler directive is detected (occurrence:22)
+// Note: (DIR6.3) Conditional compiler directive clause is effective (occurrence:1)
+// Warning: (IGN3.2) Duplicate modules/entities are detected. Subsequent modules/entities are ignored (occurrence:1)
+// Note: Read VERILOG design successfully
+0
+CPU time     : 1.13    seconds
+Elapse time  : 44      seconds
+Memory usage : 124.50  M bytes
+// Command: read_design top_m.v	-verilog	-revised
+// Parsing file top_m.v ...
+// Revised root module is set to 'top'
+// Warning: (RTL1.1) Variable/signal is assigned by more than one concurrent statement (occurrence:8)
+// Warning: (RTL14) Signal has input but it has no output (occurrence:16)
+// Note: Read VERILOG design successfully
+0
+CPU time     : 1.27    seconds
+Elapse time  : 50      seconds
+Memory usage : 124.61  M bytes
+// Command: set_mapping_method -name only
+0
+// Command: set_system_mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// (F1) Created 8 wire resolution gate(s) due to multiple-driven net(s)
+// (F28) Converted 8 internal output port(s) to inout port(s)
+// Processing Revised ...
+// Modeling Revised ...
+// (F1) Created 8 wire resolution gate(s) due to multiple-driven net(s)
+// (F28) Converted 16 internal output port(s) to inout port(s)
+CPU time     : 1.60    seconds
+Elapse time  : 60      seconds
+Memory usage : 140.87  M bytes
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 325
+// Revised key points = 324
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF    DLAT   Z         Total   
+--------------------------------------------------------------------------------
+Golden            2      5      293    16     8         324     
+--------------------------------------------------------------------------------
+Revised           2      5      293    16     8         324     
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+0
+CPU time     : 1.71    seconds
+Elapse time  : 62      seconds
+Memory usage : 141.41  M bytes
+// Command: map_key_points
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF    DLAT   Z         Total   
+--------------------------------------------------------------------------------
+Golden            2      5      293    16     8         324     
+--------------------------------------------------------------------------------
+Revised           2      5      293    16     8         324     
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+0
+// Command: add_compared_points -all
+// 314 compared points added to compare list
+0
+// Command: compare
+================================================================================
+Compared points      PO     DFF    DLAT      Total   
+--------------------------------------------------------------------------------
+Equivalent           5      293    16        314     
+================================================================================
+0
+
+
